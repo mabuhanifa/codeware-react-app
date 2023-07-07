@@ -2,9 +2,13 @@ import { useState } from "react";
 import Folder from "./Folder";
 
 export default function Folders() {
-  const [folders, setFolders] = useState([
+  const id = new Date().valueOf();
+
+  const [folders, setFolders] = useState<Folder[]>([
     {
+      id: id,
       name: "Folder 1",
+      parent: id,
     },
   ]);
   return (

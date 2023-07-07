@@ -4,18 +4,12 @@ import remove from "../icons/remove.png";
 type Props = {
   view: boolean;
   setModal: React.Dispatch<React.SetStateAction<boolean>>;
-  setFolders: React.Dispatch<
-    React.SetStateAction<
-      {
-        name: string;
-      }[]
-    >
-  >;
+  setFolders: React.Dispatch<React.SetStateAction<Folder[]>>;
 };
 
 export default function Modal({ view, setModal, setFolders }: Props) {
   const [title, setTitle] = useState("");
-
+  const id = new Date().valueOf();
   const closeModal = () => {
     setModal((m) => !m);
   };
@@ -23,9 +17,10 @@ export default function Modal({ view, setModal, setFolders }: Props) {
   const addFolder = () => {
     console.log(title);
     if (title.trim() === "") {
+      alert("Please enter a title");
       return;
     } else {
-      setFolders((f) => [...f, { name: title }]);
+      setFolders((f) => [...f, { id: id, name: title, parent: null }]);
       closeModal();
     }
   };
@@ -46,23 +41,21 @@ export default function Modal({ view, setModal, setFolders }: Props) {
             <img src={remove} alt="remove" className="h-5 w-5 cursor-pointer" />
           </button>
           <div>
-            <form>
-              <input
-                type="text"
-                placeholder="Title"
-                className="p-2 bg-slate-200 w-96"
-                onChange={(e) => setTitle(e.target.value)}
-                required
-              />
-              <br />
-              <button
-                className="bg-blue-500 px-10 text-white p-2 w-96 rounded my-5"
-                onClick={addFolder}
-                type="submit"
-              >
-                Create Folder
-              </button>
-            </form>
+            <input
+              type="text"
+              placeholder="Title"
+              className="p-2 bg-slate-200 w-96"
+              onChange={(e) => setTitle(e.target.value)}
+              required
+            />
+            <br />
+            <button
+              className="bg-blue-500 px-10 text-white p-2 w-96 rounded my-5"
+              onClick={addFolder}
+              type="submit"
+            >
+              Create Folder
+            </button>
           </div>
         </div>
       </div>

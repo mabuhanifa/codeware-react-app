@@ -7,13 +7,7 @@ import Modal from "./Modal";
 
 type Props = {
   folder: { name: string };
-  setFolders: React.Dispatch<
-    React.SetStateAction<
-      {
-        name: string;
-      }[]
-    >
-  >;
+  setFolders: React.Dispatch<React.SetStateAction<Folder[]>>;
 };
 
 export default function Folder({ folder, setFolders }: Props) {
