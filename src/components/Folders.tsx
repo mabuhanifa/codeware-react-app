@@ -11,7 +11,7 @@ export default function Folders() {
     <div>
       <h1>Folders</h1>
       {folders.map((folder, i) => (
-        <Folder folder={folder} key={i} />
+        <Folder folder={folder} key={i} setFolders={setFolders} />
       ))}
     </div>
   );
