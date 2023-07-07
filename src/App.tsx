@@ -1,7 +1,10 @@
+import Folders from "./components/Folders";
+
 function App() {
   return (
-    <div className="bg-red-500">
+    <div>
       <div></div>
+      <Folders />
     </div>
   );
 }
