@@ -2,7 +2,7 @@ import Folders from "./components/Folders";
 
 function App() {
   return (
-    <div>
+    <div className="p-5">
       <div></div>
       <Folders />
     </div>
