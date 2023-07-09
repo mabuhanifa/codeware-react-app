@@ -58,7 +58,7 @@ export default function Folder({ folder, setFolders }: Props) {
           <p>New</p>
         </div>
       </div>
-      <div className="my-3">
+      <div className="m-3">
         {folder.children &&
           collapse &&
           folder.children.map((child) => (

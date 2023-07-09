@@ -10,6 +10,7 @@ type Props = {
 
 export default function Modal({ view, setModal, setFolders, title }: Props) {
   const [name, setName] = useState("");
+  console.log(name);
   const id = new Date().valueOf();
   console.log(id);
   const closeModal = () => {
