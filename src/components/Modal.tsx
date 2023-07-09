@@ -10,15 +10,12 @@ type Props = {
 
 export default function Modal({ view, setModal, setFolders, title }: Props) {
   const [name, setName] = useState("");
-  console.log(name);
   const id = new Date().valueOf();
-  console.log(id);
   const closeModal = () => {
     setModal((m) => !m);
   };
 
   const addFolder = () => {
-    console.log(title);
     if (title.trim() === "") {
       alert("Please enter a title");
       return;
