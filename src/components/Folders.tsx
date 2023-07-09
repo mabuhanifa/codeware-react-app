@@ -6,14 +6,37 @@ export default function Folders() {
 
   const [folders, setFolders] = useState<Folder[]>([
     {
-      id: id,
-      name: "Folder 1",
-      parent: id,
+      name: "Root",
+      id: 1111,
+      parent: null,
       children: [
         {
-          id: id + 1,
-          name: "Folder 1.1",
-          parent: id,
+          id: 544311134,
+          name: "Folder 1",
+          parent: 1111,
+          children: [
+            {
+              id: 5443115134,
+              name: "Folder 1.1",
+              parent: 544311134,
+              children: [{ id: 5443115134, name: "Folder 1.2", parent: id }],
+            },
+          ],
+        },
+        {
+          id: 257875741,
+          name: "Folder 1.3",
+          parent: 1111,
+          children: [
+            {
+              id: 2578757411,
+              name: "Folder 1.1",
+              parent: 257875741,
+              children: [
+                { id: 25787574115, name: "Folder 1.2", parent: 2578757411 },
+              ],
+            },
+          ],
         },
       ],
     },
