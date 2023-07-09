@@ -42,7 +42,7 @@ export default function Folders() {
     },
   ]);
   return (
-    <div>
+    <div className="p-20">
       <h1>Folders</h1>
       {folders.map((folder, i) => (
         <Folder folder={folder} key={i} setFolders={setFolders} />
