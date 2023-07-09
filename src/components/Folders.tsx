@@ -9,6 +9,13 @@ export default function Folders() {
       id: id,
       name: "Folder 1",
       parent: id,
+      children: [
+        {
+          id: id + 1,
+          name: "Folder 1.1",
+          parent: id,
+        },
+      ],
     },
   ]);
   return (

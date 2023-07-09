@@ -1,9 +1,21 @@
 import { Toaster } from "react-hot-toast";
 
-export default function DeleteModal() {
-  //   if (!view) {
-  //     return null;
-  //   }
+type Props = {
+  view: boolean;
+  setDeleteModal: React.Dispatch<React.SetStateAction<boolean>>;
+  setFolders: React.Dispatch<React.SetStateAction<Folder[]>>;
+  folder: Folder;
+};
+
+export default function DeleteModal({
+  view,
+  setDeleteModal,
+  setFolders,
+  folder,
+}: Props) {
+  if (!view) {
+    return null;
+  }
   const closeModal = () => {};
   const handleDelete = async () => {};
   return (
@@ -25,7 +37,7 @@ export default function DeleteModal() {
             </button>
             <button
               className="text-white font-bold px-10 mx-10 py-2 bg-gray-500"
-              //   onClick={() => setModal((m) => !m)}
+              onClick={() => setDeleteModal((m) => !m)}
             >
               Cancel
             </button>

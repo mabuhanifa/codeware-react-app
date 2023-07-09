@@ -11,7 +11,7 @@ type Props = {
   setFolders: React.Dispatch<React.SetStateAction<Folder[]>>;
 };
 
-export default function Folder({ folder, setFolders }: Props) {
+export default function ChildFolder({ folder, setFolders }: Props) {
   const [collapse, setCollapse] = useState(false);
   const [modal, setModal] = useState(false);
   const [deleteModal, setDeleteModal] = useState(false);
